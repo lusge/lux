@@ -1,0 +1,7 @@
+ARG_ENABLE('lux', 'lux support', 'no');
+
+if (PHP_LUX != 'no') {
+	AC_DEFINE('HAVE_LUX', 1, "Define to 1 if the PHP extension 'lux' is available.");
+
+	EXTENSION('lux', 'lux.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
